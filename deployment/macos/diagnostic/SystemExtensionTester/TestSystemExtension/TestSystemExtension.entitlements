@@ -10,7 +10,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>$(TeamIdentifierPrefix).app-group.co.elastic.diagnostic.systemextension</string>
+		<string>$(TeamIdentifierPrefix)app-group.co.elastic</string>
 	</array>
 </dict>
 </plist>

@@ -29,7 +29,7 @@
 	<key>NetworkExtension</key>
 	<dict>
 		<key>NEMachServiceName</key>
-		<string>$(TeamIdentifierPrefix).app-group.co.elastic.diagnostic.systemextension</string>
+		<string>$(TeamIdentifierPrefix)app-group.co.elastic.TestSystemExtension</string>
 		<key>NEProviderClasses</key>
 		<dict>
 			<key>com.apple.networkextension.filter-data</key>

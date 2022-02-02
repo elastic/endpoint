@@ -162,10 +162,6 @@ class ViewController: NSViewController {
     @IBAction func startFilter(_ sender: Any) {
 
         status = .indeterminate
-        guard !NEFilterManager.shared().isEnabled else {
-            registerWithProvider()
-            return
-        }
 
         guard let extensionIdentifier = extensionBundle.bundleIdentifier else {
             self.status = .stopped
@@ -176,6 +172,7 @@ class ViewController: NSViewController {
         let activationRequest = OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: extensionIdentifier, queue: .main)
         activationRequest.delegate = self
         OSSystemExtensionManager.shared.submitRequest(activationRequest)
+
     }
 
     @IBAction func stopFilter(_ sender: Any) {
@@ -242,11 +239,6 @@ class ViewController: NSViewController {
     func enableFilterConfiguration() {
 
         let filterManager = NEFilterManager.shared()
-
-        guard !filterManager.isEnabled else {
-            registerWithProvider()
-            return
-        }
 
         loadFilterConfiguration { success in
 
