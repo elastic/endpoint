@@ -12,7 +12,7 @@
 		BEC9531E2791FDB700D99D52 /* libEndpointSecurity.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC9531C2791619100D99D52 /* libEndpointSecurity.tbd */; };
 		C40A5C46229DD6A500627D50 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B45DDD2273A3450050C59B /* NetworkExtension.framework */; };
 		C40A5C4B229DD6A500627D50 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A5C4A229DD6A500627D50 /* main.swift */; };
-		C40A5C50229DD6A500627D50 /* co.elastic.systemextension.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = C40A5C45229DD6A500627D50 /* co.elastic.systemextension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C40A5C50229DD6A500627D50 /* co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = C40A5C45229DD6A500627D50 /* co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C40A5C56229DD92E00627D50 /* IPCConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1415A227A396500B26560 /* IPCConnection.swift */; };
 		C40A5C57229DD93200627D50 /* FilterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0DBB42273BEA0005B02F4 /* FilterDataProvider.swift */; };
 		C4B1415C227BBC0200B26560 /* IPCConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1415A227A396500B26560 /* IPCConnection.swift */; };
@@ -40,7 +40,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				C40A5C50229DD6A500627D50 /* co.elastic.systemextension.systemextension in Embed System Extensions */,
+				C40A5C50229DD6A500627D50 /* co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +52,7 @@
 		6ED8E4306ED7A1A000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		BE4393B02769EDB900C69008 /* FIlterPacketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlterPacketProvider.swift; sourceTree = "<group>"; };
 		BEC9531C2791619100D99D52 /* libEndpointSecurity.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libEndpointSecurity.tbd; path = usr/lib/libEndpointSecurity.tbd; sourceTree = SDKROOT; };
-		C40A5C45229DD6A500627D50 /* co.elastic.systemextension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = co.elastic.systemextension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A5C45229DD6A500627D50 /* co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40A5C4A229DD6A500627D50 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C40A5C4C229DD6A500627D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40A5C4D229DD6A500627D50 /* TestSystemExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestSystemExtension.entitlements; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B45DB522739FFF0050C59B /* SystemExtensionTester.app */,
-				C40A5C45229DD6A500627D50 /* co.elastic.systemextension.systemextension */,
+				C40A5C45229DD6A500627D50 /* co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			);
 			name = TestSystemExtension;
 			productName = SimpleFirewallExtension;
-			productReference = C40A5C45229DD6A500627D50 /* co.elastic.systemextension.systemextension */;
+			productReference = C40A5C45229DD6A500627D50 /* co.elastic.diagnostic.SystemExtensionTester.systemextension.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 		C4B45DB422739FFF0050C59B /* SystemExtensionTester */ = {
@@ -298,7 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TestSystemExtension/TestSystemExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -308,9 +308,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.systemextension;
+				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.diagnostic.SystemExtensionTester.systemextension;
 				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PROVISIONING_PROFILE_SPECIFIER = "Dev Elastic Endpoint System Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "System Extension Diagnostic";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -320,7 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TestSystemExtension/TestSystemExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -330,9 +330,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.systemextension;
+				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.diagnostic.SystemExtensionTester.systemextension;
 				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PROVISIONING_PROFILE_SPECIFIER = "Dev Elastic Endpoint System Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "System Extension Diagnostic";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -460,7 +460,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SystemExtensionTester/SystemExtensionTester.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
@@ -470,9 +470,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.endpoint;
+				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.diagnostic.SystemExtensionTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Dev Elastic Endpoint Agent";
+				PROVISIONING_PROFILE_SPECIFIER = "System Extension Diagnostics Application";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -483,7 +483,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SystemExtensionTester/SystemExtensionTester.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2BT3HPN62Z;
@@ -493,9 +493,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.endpoint;
+				PRODUCT_BUNDLE_IDENTIFIER = co.elastic.diagnostic.SystemExtensionTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Dev Elastic Endpoint Agent";
+				PROVISIONING_PROFILE_SPECIFIER = "System Extension Diagnostics Application";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
