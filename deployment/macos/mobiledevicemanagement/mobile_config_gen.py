@@ -8,6 +8,7 @@
 import sys
 import uuid
 import argparse
+import os
 
 template = """
 <?xml version="1.0" encoding="UTF-8"?>
@@ -200,7 +201,6 @@ template = """
 
 def main(argv):
 
-    name = str()
     output_file = str()
 
     parser = argparse.ArgumentParser()
@@ -211,6 +211,11 @@ def main(argv):
 
     output_file = args.output_file_path
 
+    # Ensure a directory is not specified
+    if os.path.isdir(output_file):
+        print("Please specify a file name in the output path")
+        exit(-1)
+
     # Ensure the file ends with .mobileconfig extension
     if output_file.endswith(".mobileconfig") == False:
         output_file += ".mobileconfig"
@@ -218,7 +223,7 @@ def main(argv):
 
     with open(output_file, 'w', encoding='utf-8') as output_config_file:
 
-        pos_args = [str(uuid.uuid4()).upper() for _ in range (0,6)]
+        pos_args = [str(uuid.uuid4()).upper() for _ in range (  6)]
 
         output_data = template.format(*pos_args, args.name)
         output_config_file.write(output_data)
