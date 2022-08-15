@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: elastic-security
+  name: elastic-agent
   namespace: kube-system
   labels:
-    app: elastic-security
+    app: elastic-agent
 spec:
   selector:
     matchLabels:
-      app: elastic-security
+      app: elastic-agent
   template:
     metadata:
       labels:
-        app: elastic-security
+        app: elastic-agent
     spec:
       # Tolerations are needed to run Elastic Agent on Kubernetes control-plane nodes.
       # Agents running on control-plane nodes collect metrics from the control plane components (scheduler, controller manager) of Kubernetes
@@ -21,7 +21,7 @@ spec:
           effect: NoSchedule
         - key: node-role.kubernetes.io/master
           effect: NoSchedule
-      serviceAccountName: elastic-security
+      serviceAccountName: elastic-agent
       hostNetwork: true
       # 'hostPID: true' enables the Elastic Security integration to observe all process exec events on the host.
       # Sharing the host process ID namespace gives visibility of all processes running on the same host.
@@ -185,50 +185,50 @@ spec:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: elastic-security
+  name: elastic-agent
 subjects:
   - kind: ServiceAccount
-    name: elastic-security
+    name: elastic-agent
     namespace: kube-system
 roleRef:
   kind: ClusterRole
-  name: elastic-security
+  name: elastic-agent
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   namespace: kube-system
-  name: elastic-security
+  name: elastic-agent
 subjects:
   - kind: ServiceAccount
-    name: elastic-security
+    name: elastic-agent
     namespace: kube-system
 roleRef:
   kind: Role
-  name: elastic-security
+  name: elastic-agent
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: elastic-security-kubeadm-config
+  name: elastic-agent-kubeadm-config
   namespace: kube-system
 subjects:
   - kind: ServiceAccount
-    name: elastic-security
+    name: elastic-agent
     namespace: kube-system
 roleRef:
   kind: Role
-  name: elastic-security-kubeadm-config
+  name: elastic-agent-kubeadm-config
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: elastic-security
+  name: elastic-agent
   labels:
-    k8s-app: elastic-security
+    k8s-app: elastic-agent
 rules:
   - apiGroups: [""]
     resources:
@@ -292,11 +292,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: elastic-security
-  # Should be the namespace where elastic-security is running
+  name: elastic-agent
+  # Should be the namespace where elastic-agent is running
   namespace: kube-system
   labels:
-    k8s-app: elastic-security
+    k8s-app: elastic-agent
 rules:
   - apiGroups:
       - coordination.k8s.io
@@ -307,10 +307,10 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: elastic-security-kubeadm-config
+  name: elastic-agent-kubeadm-config
   namespace: kube-system
   labels:
-    k8s-app: elastic-security
+    k8s-app: elastic-agent
 rules:
   - apiGroups: [""]
     resources:
@@ -322,8 +322,8 @@ rules:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: elastic-security
+  name: elastic-agent
   namespace: kube-system
   labels:
-    k8s-app: elastic-security
+    k8s-app: elastic-agent
 ---
