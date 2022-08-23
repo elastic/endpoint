@@ -1,3 +1,5 @@
+---
+# For more information refer to https://www.elastic.co/guide/en/fleet/current/running-on-kubernetes-managed-by-fleet.html
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -14,11 +16,9 @@ spec:
       labels:
         app: elastic-agent
     spec:
-      # Tolerations are needed to run Elastic Agent on Kubernetes control-plane nodes.
-      # Agents running on control-plane nodes collect metrics from the control plane components (scheduler, controller manager) of Kubernetes
+      # Tolerations are needed to run Elastic Agent on Kubernetes master nodes.
+      # Agents running on master nodes collect metrics from the control plane components (scheduler, controller manager) of Kubernetes
       tolerations:
-        - key: node-role.kubernetes.io/control-plane
-          effect: NoSchedule
         - key: node-role.kubernetes.io/master
           effect: NoSchedule
       serviceAccountName: elastic-agent
@@ -71,13 +71,13 @@ spec:
             - name: FLEET_ENROLLMENT_TOKEN
               value: ""
             - name: KIBANA_HOST
-              value: "" #"http://kibana:5601"
+              value: ""
             # The basic authentication username used to connect to Kibana and retrieve a service_token to enable Fleet
             - name: KIBANA_FLEET_USERNAME
-              value: "" #"elastic"
+              value: "" # elastic
             # The basic authentication password used to connect to Kibana and retrieve a service_token to enable Fleet
             - name: KIBANA_FLEET_PASSWORD
-              value: "" #"changeme"
+              value: "" # changeme
             - name: NODE_NAME
               valueFrom:
                 fieldRef:
@@ -98,6 +98,12 @@ spec:
             - name: proc
               mountPath: /hostfs/proc
               readOnly: true
+            - name: etc-kubernetes
+              mountPath: /hostfs/etc/kubernetes
+              readOnly: true
+            - name: var-lib
+              mountPath: /hostfs/var/lib
+              readOnly: true
             - name: cgroup
               mountPath: /hostfs/sys/fs/cgroup
               readOnly: true
@@ -106,12 +112,6 @@ spec:
               readOnly: true
             - name: varlog
               mountPath: /var/log
-              readOnly: true
-            - name: etc-kubernetes
-              mountPath: /hostfs/etc/kubernetes
-              readOnly: true
-            - name: var-lib
-              mountPath: /hostfs/var/lib
               readOnly: true
             - name: passwd
               mountPath: /hostfs/etc/passwd
