@@ -21,6 +21,8 @@ spec:
       tolerations:
         - key: node-role.kubernetes.io/master
           effect: NoSchedule
+        - key: node-role.kubernetes.io/control-plane
+          effect: NoSchedule
       serviceAccountName: elastic-agent
       hostNetwork: true
       # 'hostPID: true' enables the Elastic Security integration to observe all process exec events on the host.
