@@ -42,6 +42,18 @@ template = """
                         <key>Allowed</key>
                         <integer>1</integer>
                         <key>CodeRequirement</key>
+                        <string>identifier "co.elastic.elastic-agent" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2BT3HPN62Z"</string>
+                        <key>Identifier</key>
+                        <string>co.elastic.elastic-agent</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>StaticCode</key>
+                        <integer>1</integer>
+                    </dict>
+                    <dict>
+                        <key>Allowed</key>
+                        <integer>1</integer>
+                        <key>CodeRequirement</key>
                         <string>identifier "64_Bit_Endpoint_Macos" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2BT3HPN62Z"</string>
                         <key>Identifier</key>
                         <string>/Library/Elastic/Endpoint/elastic-endpoint</string>
