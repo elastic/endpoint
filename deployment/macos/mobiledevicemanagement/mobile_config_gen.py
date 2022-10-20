@@ -10,8 +10,7 @@ import uuid
 import argparse
 import os
 
-template = """
-<?xml version="1.0" encoding="UTF-8"?>
+template = """<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -38,6 +37,18 @@ template = """
             <dict>
                 <key>SystemPolicyAllFiles</key>
                 <array>
+                    <dict>
+                        <key>Allowed</key>
+                        <integer>1</integer>
+                        <key>CodeRequirement</key>
+                        <string>identifier "co.elastic.elastic-agent" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2BT3HPN62Z"</string>
+                        <key>Identifier</key>
+                        <string>co.elastic.elastic-agent</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>StaticCode</key>
+                        <integer>1</integer>
+                    </dict>
                     <dict>
                         <key>Allowed</key>
                         <integer>1</integer>
