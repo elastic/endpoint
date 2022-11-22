@@ -30,8 +30,20 @@ spec:
       containers:
         - name: k8smd
           image: docker.elastic.co/endpoint/k8smd:8.4.0
+          resources:
+            limits:
+              memory: 1000Mi
+            requests:
+              cpu: 50m
+              memory: 100Mi
         - name: endpoint-security
           image: docker.elastic.co/endpoint/endpoint-security:8.4.0
+          resources:
+            limits:
+              memory: 4000Mi
+            requests:
+              cpu: 200m
+              memory: 500Mi
           securityContext:
             runAsUser: 0
             privileged: true
