@@ -24,13 +24,13 @@ Open brackets should exist on a new line, indented to the point of the previous 
 int
 function(
     int arg)
+{
+    if (arg == 42)
     {
-        if (arg == 42)
-        {
-            return 42;
-        }
-        return 0;
+        return 42;
     }
+    return 0;
+}
 ```
 
 An exception to this is the extern block, for reasons of not force-indenting the rest of the file
