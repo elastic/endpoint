@@ -8,6 +8,7 @@ and maintain the code.
 
 
 ### Line Length
+
 Each line of text in your code should be at most 100 characters long.
 
 Though we no longer limit ourselves to 80 columns, we frequently find ourselves developing on
@@ -16,35 +17,35 @@ the developer's focus is drawn away.
 
 
 ### Open Bracket
+
 Open brackets should exist on a new line, indented to the point of the previous line.
 
-::
-
-   int
-   function(
-       int arg)
-   {
-       if (arg == 42)
-       {
-           return 42;
-       }
-       return 0;
-   }
-
+```cpp
+int
+function(
+    int arg)
+    {
+        if (arg == 42)
+        {
+            return 42;
+        }
+        return 0;
+    }
+```
 
 An exception to this is the extern block, for reasons of not force-indenting the rest of the file
 contained in the `extern`ed code.
 
-::
-   extern "C" {
+```cpp
+extern "C" {
 
-   int
-   foonction(
-       int arg1,
-       int arg2);
+int
+foonction(
+    int arg1,
+    int arg2);
 
-   }
-
+}
+```
 
 ### Indentation
 Use 4 spaces for indentation. Do not use tabs, please.
@@ -68,8 +69,8 @@ comments.
 
 We align pointers and references to the right.
 
-::
+```cpp
 
-   const std::string &longBlockOfText = gatherText();
-   const char *pbuf = longBlockOfText.c_str();
-
+const std::string &longBlockOfText = gatherText();
+const char *pbuf = longBlockOfText.c_str();
+```
