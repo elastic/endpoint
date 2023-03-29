@@ -74,3 +74,33 @@ We align pointers and references to the right.
 const std::string &longBlockOfText = gatherText();
 const char *pbuf = longBlockOfText.c_str();
 ```
+
+### Function Declarations and Definitions
+
+Function definitions can elide unused parameters, but function declaration should not.
+Leaving out a function argument in the definition is often the simplest method for suppressing
+a warning about a variable not being used.
+
+However, the declaration of the function needs to have the parameter listed and explained in
+a brief comment, so a future implementer is able to understand what it is for.
+
+### Spaces or Tabs
+As mentioned above, spaces. It's meant for consistency across editors and displays.
+
+### Readability
+We insert a space between control identifiers (`if`, `while`, etc) and the open-parenthesis.
+
+We also insert a space between the assignment operator.
+
+```cpp
+int count = 0;
+while (true)
+{
+    if (++count > 5)
+    {
+        break;
+    }
+
+    std::cout << "looped again!" << std::endl;
+}
+```
