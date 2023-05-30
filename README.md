@@ -28,6 +28,10 @@ positives. To do so, please use
 If you aren't sure where to file an issue, don't worry. Just put it where it feels best placed.
 We'll take it from there.
 
+## Experiencing Performance Issues
+
+Please see [PerformanceIssues-Windows.md](PerformanceIssues-Windows.md).
+
 ## Security Concerns
 
 If you need to report a bug that an attacker could take advantage of, please instead email
