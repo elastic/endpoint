@@ -14,7 +14,8 @@ In other words, if Endpoint is consuming CPU, it's likely in response to some ot
 
 ## Introducing the new `top` command
 
-![image](https://github.com/elastic/endpoint-dev/assets/42078554/f87aa385-b056-4891-80a3-6156f7f3566b)
+![image](https://github.com/elastic/endpoint/assets/42078554/1a36075e-62a1-4b45-ad1d-c2c5ed44a427)
+
 
 Newer versions of Endpoint include a feature similar to `top` on POSIX platforms.  `top` graphically shows a breakdown of the processes that triggered Endpoint's CPU usage within the last 3 seconds.  Further, `top` breaks this activity down by feature.  `top` displays utilization in CPU-milliseconds.  On multi-core systems, there are 1000 CPU-milliseconds per core per second, so it's possible to have more than 3000ms in a given 3-second interval.
 
