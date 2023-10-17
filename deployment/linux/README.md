@@ -19,7 +19,7 @@ NOTE: In order to compile the kernel with BTF `pahole` needs to be installed:
   │   - DEBUG_INFO_DWARF5 [=n] && <choice> && (!CC_IS_CLANG [=n] || AS_IS_LLVM [=n] || AS_IS_GNU [=y] && AS_VERSION [=24000]>=23502 && AS_HAS_NON_CONST_LEB128 [=y])   
 ```
 ```
-  │ Symbol: DEBUG_INFO_DWARF5 [=n]                                                                                                                                                               │  
+  │ Symbol: DEBUG_INFO_DWARF4 [=n]                                                                                                                                                               │  
   │ Type  : bool                                                                                                                                                                                 │  
   │ Defined at lib/Kconfig.debug:270                                                                                                                                                             │  
   │   Prompt: Generate DWARF Version 4 debuginfo                                                                                                                                                 │  
