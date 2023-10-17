@@ -57,7 +57,7 @@ NOTE: In order to compile the kernel with BTF `pahole` needs to be installed:
 ```
 NOTE:  Enabling `RANDSTRUCT_NONE` will provide the option in `make menuconfig` to enable `DEBUG_INFO_BTF`. Both `RANDSTRUCT_NONE` and `DEBUG_INFO_BTF` need to be enabled.
 
-3. Export taskstats (`CONFIG_TASKSTATS`) to enable a eBPF hook point
+3. Export taskstats (`CONFIG_TASKSTATS`) to enable an eBPF hook point
 ```
   │ Symbol: TASKSTATS [=n]                                                                                                                                                                       │  
   │ Type  : bool                                                                                                                                                                                 │  
