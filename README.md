@@ -39,6 +39,6 @@ security@elastic.co so we can responsibly address the issue. Further reading [he
 
 ## Asking questions
 
-* You can ask a question in the [forum](https://discuss.elastic.co/c/security/endpoint-security).
 * You are welcome to join [Elastic Stack Community](https://elasticstack.slack.com) slack and ask for help on the `#endpoint-security` channel.
+* You can ask a question in the [forum](https://discuss.elastic.co/c/security/endpoint-security).
 
