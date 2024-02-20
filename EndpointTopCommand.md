@@ -47,7 +47,7 @@ _Image: Elastic Endpoint 8.12.0 running on Windows_
 
 Newer versions of Endpoint include a feature similar to `top` on POSIX platforms.  `top` graphically shows a breakdown of the processes groups that triggered Endpoint's CPU usage. Further, `top` breaks this activity down by feature.  
 
-`top` displays the percentage of time Endpoint service spent on particular process group not accounting for operating system's process scheduling, etc, also known as "the wall clock". In other words, it's a coarse indicator how much percent of service's CPU consumption might* be consumed by a particular work unit. Taking the above example, Elastic Endpoint service consumed 44.3% (out of 1600%) system CPU time, where 16% might* be consumed by work done on behalf of `msedge.exe`.
+`top` displays the percentage of time Endpoint service spent on particular process group not accounting for operating system's process scheduling, etc, also known as "the wall clock". In other words, it's a coarse indicator how much percent of service's CPU consumption might* be consumed by a particular work unit. Taking the above example, Elastic Endpoint service consumed 44.3% (out of 1600%) system CPU time, where 16% might* be consumed by work done on behalf of `cmake.exe`.
 
 _\*Endpoint service, as a user mode process, cannot track reliably CPU time spent executing particular code path. Time measured by a wall clock is higher than real CPU time spent because the code path execution could get blocked on synchronization elements and as any process the Endpoint service shares CPU time with other processes_
 
