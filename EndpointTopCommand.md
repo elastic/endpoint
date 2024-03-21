@@ -17,28 +17,28 @@ In other words, if Endpoint is consuming CPU, it's likely in response to some ot
 
 
 ```
-| PROCESS            | OVERALL | AUTH | BHVR | DIAG BHVR | DNS | FILE | LIB | MLWR | MEM SCAN | NET | PROC | RANSOM | REG | TI API | UI API |
-=============================================================================================================================================
-| cmake.exe          |    16.4 |  0.0 |  0.2 |       1.9 | 0.0 | 10.9 | 0.0 |  3.3 |      0.0 | 0.0 |  0.1 |    0.0 | 0.0 |    0.0 |    0.0 |
-| MSBuild.exe        |    11.6 |  0.0 |  0.9 |       1.3 | 0.0 |  0.5 | 2.7 |  5.3 |      0.0 | 0.0 |  0.9 |    0.0 | 0.0 |    0.0 |    0.0 |
-| cmd.exe            |     6.1 |  0.0 |  1.3 |       1.7 | 0.0 |  0.1 | 0.0 |  0.0 |      1.2 | 0.0 |  1.7 |    0.0 | 0.0 |    0.1 |    0.0 |
-| conhost.exe        |     1.6 |  0.0 |  0.3 |       0.4 | 0.0 |  0.0 | 0.1 |  0.0 |      0.0 | 0.0 |  0.8 |    0.0 | 0.0 |    0.0 |    0.0 |
-| svchost.exe        |     1.2 |  0.0 |  0.0 |       0.0 | 0.0 |  1.2 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| Slack.exe          |     0.1 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| cl.exe             |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| msiexec.exe        |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| setup.exe          |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| chrome.exe         |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| Code.exe           |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| mscorsvw.exe       |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| msedge.exe         |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| vctip.exe          |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| mscorsvw.exe       |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| msedgewebview2.exe |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| filebeat.exe       |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| devenv.exe         |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| Tracker.exe        |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
-| link.exe           |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 |    0.0 |    0.0 |
+| PROCESS            | OVERALL | AUTH | BHVR | DIAG BHVR | DNS | FILE | LIB | MLWR | MEM SCAN | NET | PROC | RANSOM | REG | API |
+=================================================================================================================================
+| cmake.exe          |    16.4 |  0.0 |  0.2 |       1.9 | 0.0 | 10.9 | 0.0 |  3.3 |      0.0 | 0.0 |  0.1 |    0.0 | 0.0 | 0.0 |
+| MSBuild.exe        |    11.6 |  0.0 |  0.9 |       1.3 | 0.0 |  0.5 | 2.7 |  5.3 |      0.0 | 0.0 |  0.9 |    0.0 | 0.0 | 0.0 |
+| cmd.exe            |     6.1 |  0.0 |  1.3 |       1.7 | 0.0 |  0.1 | 0.0 |  0.0 |      1.2 | 0.0 |  1.7 |    0.0 | 0.0 | 0.1 |
+| conhost.exe        |     1.6 |  0.0 |  0.3 |       0.4 | 0.0 |  0.0 | 0.1 |  0.0 |      0.0 | 0.0 |  0.8 |    0.0 | 0.0 | 0.0 |
+| svchost.exe        |     1.2 |  0.0 |  0.0 |       0.0 | 0.0 |  1.2 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| Slack.exe          |     0.1 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| cl.exe             |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| msiexec.exe        |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| setup.exe          |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| chrome.exe         |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| Code.exe           |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| mscorsvw.exe       |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| msedge.exe         |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| vctip.exe          |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| mscorsvw.exe       |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| msedgewebview2.exe |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| filebeat.exe       |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| devenv.exe         |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| Tracker.exe        |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
+| link.exe           |     0.0 |  0.0 |  0.0 |       0.0 | 0.0 |  0.0 | 0.0 |  0.0 |      0.0 | 0.0 |  0.0 |    0.0 | 0.0 | 0.0 |
 
 Endpoint service (16 CPU): 44.3% out of 1600%
 ```
@@ -100,11 +100,10 @@ To fit everything on the screen, columns are abbreviated as follows:
 | DNS | DNS Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#event-collection)| 
 | LIB | Library Load Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#event-collection)| 
 | AUTH | Authentication Events | Uncheck Security Events in [Event Collection](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#event-collection) |
-| CRED | Credential Access Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#event-collection)|
+| CRED | Credential Access Events | Uncheck API in [Event Collection](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#event-collection)|
 | RANSOM | Ransomware Protection | Uncheck [Ransomware protections enabled](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#ransomware-protection) |
-| TI API | Threat Intelligence Events | In [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings), set `windows.advanced.events.api: false` |
-| UI API | win32k API Events | In [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings), set `windows.advanced.events.api: false` |
-| PROJ INJ | Process Injection Protection (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `windows.advanced.memory_protection.shellcode: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Process Injection protection. |
+| API | API Events | In [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings), set `windows.advanced.events.api: false` |
+| PROC INJ | Process Injection Protection (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `windows.advanced.memory_protection.shellcode: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Process Injection protection. |
 | MEM SCAN | Memory Scanning (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `*.advanced.memory_protection.memory_scan: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Memory Scanning. |
 | BHVR | Malicious Behavior Protection (Rules Engine) | Uncheck [Malicious behavior protections enabled](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#behavior-protection) |
 | DIAG BHVR | Diagnostic Malicious Behavior Protection (Rules Engine) | Set `*.advanced.diagnostic.enabled: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.9/configure-endpoint-integration-policy.html#adv-policy-settings) |
