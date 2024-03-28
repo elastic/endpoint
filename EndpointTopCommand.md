@@ -52,7 +52,7 @@ Newer versions of Endpoint include a feature similar to `top` on POSIX platforms
 
 _\*Endpoint service, as a user mode process, cannot track reliably CPU time spent executing particular code path. Time measured by a wall clock is higher than real CPU time spent because the code path execution could get blocked on synchronization elements and as any process the Endpoint service shares CPU time with other processes_
 
-Endpoint displays metrics for process groups as opposed to POSIX's `top` command displaying metrics per process. Taking the above example, there could have been multiple `MSBuild.exe` processes running at that time but the statistics for all of them are added together. This information can be useful to guide you in the creation of [Exceptions](https://www.elastic.co/guide/en/security/current/add-exceptions.html#endpoint-rule-exceptions) and [Trusted Applications](https://www.elastic.co/guide/en/security/current/trusted-apps-ov.html) to [optimize Endpoint](https://www.elastic.co/guide/en/security/current/endpoint-artifacts.html) for your environment.
+Endpoint displays metrics for process groups as opposed to POSIX's `top` command displaying metrics per process. Taking the above example, there could have been multiple `MSBuild.exe` processes running at that time but the statistics for all of them are added together. This information can be useful to guide you in the creation of [Exceptions](https://www.elastic.co/guide/en/security/8.13/add-exceptions.html#endpoint-rule-exceptions) and [Trusted Applications](https://www.elastic.co/guide/en/security/8.13/trusted-apps-ov.html) to [optimize Endpoint](https://www.elastic.co/guide/en/security/8.13/endpoint-artifacts.html) for your environment.
 
 If you prefer to see values normalized to 100%, regardless of how many logical processors you have, use `top --normalized`
 
@@ -93,24 +93,24 @@ To fit everything on the screen, columns are abbreviated as follows:
 
 | Abbreviation | Feature | How do I toggle this off? |
 | - | - | - |
-| MLWR | Malware Protection | Uncheck [Malware protections enabled](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#malware-protection) |
-| NET | Network Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection) |
-| PROC | Process Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection)| 
-| FILE | File Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection)| 
-| REG | Registry Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection)| 
-| DNS | DNS Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection)| 
-| LIB | Library Load Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection)| 
-| AUTH | Authentication Events | Uncheck Security Events in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection) |
-| CRED | Credential Access Events | Uncheck API in [Event Collection](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#event-collection)|
-| RANSOM | Ransomware Protection | Uncheck [Ransomware protections enabled](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#ransomware-protection) |
-| API | API Events | In [Advanced Policy](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#adv-policy-settings), set `windows.advanced.events.api: false` |
-| PROC INJ | Process Injection Protection (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `windows.advanced.memory_protection.shellcode: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Process Injection protection. |
-| MEM SCAN | Memory Scanning (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `*.advanced.memory_protection.memory_scan: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Memory Scanning. |
-| BHVR | Malicious Behavior Protection (Rules Engine) | Uncheck [Malicious behavior protections enabled](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#behavior-protection) |
-| DIAG BHVR | Diagnostic Malicious Behavior Protection (Rules Engine) | Set `*.advanced.diagnostic.enabled: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/current/configure-endpoint-integration-policy.html#adv-policy-settings) |
+| MLWR | Malware Protection | Uncheck [Malware protections enabled](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#malware-protection) |
+| NET | Network Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection) |
+| PROC | Process Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection)| 
+| FILE | File Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection)| 
+| REG | Registry Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection)| 
+| DNS | DNS Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection)| 
+| LIB | Library Load Events | Uncheck in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection)| 
+| AUTH | Authentication Events | Uncheck Security Events in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection) |
+| CRED | Credential Access Events | Uncheck API in [Event Collection](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#event-collection)|
+| RANSOM | Ransomware Protection | Uncheck [Ransomware protections enabled](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#ransomware-protection) |
+| API | API Events | In [Advanced Policy](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#adv-policy-settings), set `windows.advanced.events.api: false` |
+| PROC INJ | Process Injection Protection (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `windows.advanced.memory_protection.shellcode: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Process Injection protection. |
+| MEM SCAN | Memory Scanning (part of Memory Protection) | Uncheck [Memory threat protections enabled](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#memory-protection) to turn off Memory Protection entirely, or set `*.advanced.memory_protection.memory_scan: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#adv-policy-settings) to turn off only Memory Scanning. |
+| BHVR | Malicious Behavior Protection (Rules Engine) | Uncheck [Malicious behavior protections enabled](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#behavior-protection) |
+| DIAG BHVR | Diagnostic Malicious Behavior Protection (Rules Engine) | Set `*.advanced.diagnostic.enabled: false` in [Advanced Policy](https://www.elastic.co/guide/en/security/8.13/configure-endpoint-integration-policy.html#adv-policy-settings) |
 
 _*For up-to-date list of abbreviations consult built in help, `elastic-endpoint --help`_
 
 ## Conclusion
 
-The Elastic Endpoint team is constantly working to evaluate and improve performance, but every environment is unique with varying combinations of software and configurations.  The `top` command can help you gain a greater understanding of performance issues in your environment, empowering you to take action to [resolve](https://www.elastic.co/guide/en/security/current/endpoint-artifacts.html) them.
+The Elastic Endpoint team is constantly working to evaluate and improve performance, but every environment is unique with varying combinations of software and configurations.  The `top` command can help you gain a greater understanding of performance issues in your environment, empowering you to take action to [resolve](https://www.elastic.co/guide/en/security/8.13/endpoint-artifacts.html) them.
