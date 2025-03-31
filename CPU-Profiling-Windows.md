@@ -21,7 +21,24 @@ powershell.exe -noprofile -command "&wpr.exe -start CPU -filemode; Start-Sleep 6
 ## Process Monitor Trace 
 [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) also provides the ability to capture profiling data.  ProcMon CPU traces are less-comprehensive and lower fidelity than WPR traces, but include other context such as file, registry, network, image, and process events.
 
-ProcMon CPU traces are not enabled by default.  To enable profiling data capture, Select **Options** -> **Profiling Events**
+### Enabling ProcMon CPU Tracing
+
+ProcMon does not capture CPU traces by default.  When enabled, its GUI limits resolution to 10 samples/second.  This resolution isn't useful for diagnosing many types of CPU issues.  To capture higher-fidelity (20 samples/second) traces, set the following **before launching ProcMon**:
+```
+reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 20
+```
+
+If the system becomes unusable during high-fidelity CPU profiling, then either follow the GUI instructions below or run this command **before launching ProcMon**:
+
+```
+reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 10
+```
+
+<details>
+  
+<summary>Configure Low-Fidelity CPU Profiling via GUI</summary>
+
+To enable profiling 10 samples/sec data capture, Select **Options** -> **Profiling Events**
 
 ![image](https://github.com/user-attachments/assets/8d79cab5-a425-4fe8-8016-107b76bfa3c0)
 
@@ -33,6 +50,10 @@ If a trace was already running, start a new one by selecting **Edit** -> **Clear
 
 ![image](https://github.com/user-attachments/assets/2155763c-c447-4ea6-9791-b58ff1a46b58)
 
+</details>
+
+### Capturing the ProcMon Trace
+
 Now, reproduce the problematic behavior while the trace is running.  When you are done, select **All Events** and PML format in the save dialog.  The resulting PML file should compress well - please zip it.
 
 ![image](https://github.com/user-attachments/assets/8ecbc63f-3f09-4175-aa1a-b61a33cfdbd9)
@@ -43,3 +64,6 @@ Because Elastic Defend runs as an [Antimalware Protected Process Light](https://
 ```
 
  The resulting DMP file will compress well.  Please zip it.  Note you will not be able to navigate to `C:\Program Files\ELastic\Endpoint` in Windows Explorer on most systems, but you should be able to copy out the DMP file via command line.
+
+> [!TIP]  
+> PML and DMP files usually compress well.  To reduce file transfer times, please zip them.
