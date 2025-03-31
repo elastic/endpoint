@@ -21,14 +21,14 @@ powershell.exe -noprofile -command "&wpr.exe -start CPU -filemode; Start-Sleep 6
 ## Process Monitor Trace 
 [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) also provides the ability to capture profiling data.  ProcMon CPU traces are less-comprehensive and lower fidelity than WPR traces, but include other context such as file, registry, network, image, and process events.
 
-### Enabling CPU Tracing
+### Enabling ProcMon CPU Tracing
 
-ProcMon does not capture CPU traces by default.  When enabled, its GUI allows a maximum of 10 samples/second.  This resolution isn't isn't useful for diagnosing some types of CPU issues.  To capture higher-fidelity (20 samples/second) traces, set the following **before launching ProcMon**:
+ProcMon does not capture CPU traces by default.  When enabled, its GUI limits resolution to 10 samples/second.  This resolution isn't isn't useful for diagnosing many types of CPU issues.  To capture higher-fidelity (20 samples/second) traces, set the following **before launching ProcMon**:
 ```
 reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 20
 ```
 
-If the system becomes unusable during high-fidelity CPU profiling, then either use this command or follow the GUI instructions below to enable 10 samples/second tracing.
+If the system becomes unusable during high-fidelity CPU profiling, then either follow the GUI instructions below or run this command **before launching ProcMon**:
 
 ```
 reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 10
@@ -52,7 +52,7 @@ If a trace was already running, start a new one by selecting **Edit** -> **Clear
 
 </details>
 
-### Capturing the Trace
+### Capturing the ProcMon Trace
 
 Now, reproduce the problematic behavior while the trace is running.  When you are done, select **All Events** and PML format in the save dialog.  The resulting PML file should compress well - please zip it.
 
@@ -64,3 +64,6 @@ Because Elastic Defend runs as an [Antimalware Protected Process Light](https://
 ```
 
  The resulting DMP file will compress well.  Please zip it.  Note you will not be able to navigate to `C:\Program Files\ELastic\Endpoint` in Windows Explorer on most systems, but you should be able to copy out the DMP file via command line.
+
+> [!TIP]  
+> PML and DMP files usually compress well.  To reduce file transfer times, please zip them.
