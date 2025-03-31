@@ -21,7 +21,24 @@ powershell.exe -noprofile -command "&wpr.exe -start CPU -filemode; Start-Sleep 6
 ## Process Monitor Trace 
 [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) also provides the ability to capture profiling data.  ProcMon CPU traces are less-comprehensive and lower fidelity than WPR traces, but include other context such as file, registry, network, image, and process events.
 
-ProcMon CPU traces are not enabled by default.  To enable profiling data capture, Select **Options** -> **Profiling Events**
+### Enabling CPU Tracing
+
+ProcMon does not capture CPU traces by default, and its GUI allows a maximum of 10 samples/second.  This resolution isn't isn't useful for diagnosing some types of CPU issues.  To capture higher-fidelity traces, set the following **before launching ProcMon**:
+```
+reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 20
+```
+
+If the system becomes unusable during high-fidelity CPU profiling, then either use this command or follow the GUI instructions below.
+
+```
+reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 10
+```
+
+<details>
+  
+<summary>Configure Low-Fidelity CPU Profiling via GUI</summary>
+
+To enable profiling 10 samples/sec data capture, Select **Options** -> **Profiling Events**
 
 ![image](https://github.com/user-attachments/assets/8d79cab5-a425-4fe8-8016-107b76bfa3c0)
 
@@ -32,6 +49,10 @@ Then check **Generate thread profiling events** and select **Every 100 milliseco
 If a trace was already running, start a new one by selecting **Edit** -> **Clear Display**
 
 ![image](https://github.com/user-attachments/assets/2155763c-c447-4ea6-9791-b58ff1a46b58)
+
+</details>
+
+### Capturing the Trace
 
 Now, reproduce the problematic behavior while the trace is running.  When you are done, select **All Events** and PML format in the save dialog.  The resulting PML file should compress well - please zip it.
 
