@@ -23,7 +23,7 @@ powershell.exe -noprofile -command "&wpr.exe -start CPU -filemode; Start-Sleep 6
 
 ### Enabling ProcMon CPU Tracing
 
-ProcMon does not capture CPU traces by default.  When enabled, its GUI limits resolution to 10 samples/second.  This resolution isn't isn't useful for diagnosing many types of CPU issues.  To capture higher-fidelity (20 samples/second) traces, set the following **before launching ProcMon**:
+ProcMon does not capture CPU traces by default.  When enabled, its GUI limits resolution to 10 samples/second.  This resolution isn't useful for diagnosing many types of CPU issues.  To capture higher-fidelity (20 samples/second) traces, set the following **before launching ProcMon**:
 ```
 reg.exe add "HKCU\Software\SysInternals\Process Monitor" /f /v Profiling /t REG_DWORD /d 20
 ```
