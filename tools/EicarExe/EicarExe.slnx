@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="EicarExe/EicarExe.vcxproj" Id="1acaf69d-092f-457e-82f1-0d0a20bed61e" />
+</Solution>
