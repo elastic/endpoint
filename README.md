@@ -4,10 +4,10 @@ The Elastic Endpoint provides deep, kernel-level data and adds free antivirus to
 Information on getting started with Elastic Endpoint Security is available
 [here](https://www.elastic.co/guide/en/security/index.html).
 
-Thanks for checking out the Elastic Endpoint. Protecting the world\'s data from attackers is our
-passion. We\'re proud to secure your systems and hope you love Elastic Endpoint Security.
+Thanks for checking out the Elastic Endpoint. Protecting the world's data from attackers is our
+passion. We're proud to secure your systems and hope you love Elastic Endpoint Security.
 
-If you have any issues or questions with the Elastic Endpoint please get in touch. We\'d love to hear
+If you have any issues or questions with the Elastic Endpoint please get in touch. We'd love to hear
 from you!
 
 ## Where to File Issues
@@ -18,15 +18,15 @@ the [Beats](https://github.com/elastic/beats) repository and issues with the Kib
 application or Ingest Manager should be filed in the [Kibana](https://github.com/elastic/kibana)
 repository.
 
-If you\'re using malware protection and are experiencing false positives, you should be able to use
+If you're using malware protection and are experiencing false positives, you should be able to use
 the
 [exceptions workflow](https://www.elastic.co/guide/en/security/7.9/detections-ui-exceptions.html) to
 tune your environment. You can help us improve the feature though by telling us about false
 positives. To do so, please use
 [this](https://discuss.elastic.co/t/submitting-false-positives/232322) process.
 
-If you aren\'t sure where to file an issue, don\'t worry. Just put it where it feels best placed.
-We\'ll take it from there.
+If you aren't sure where to file an issue, don't worry. Just put it where it feels best placed.
+We'll take it from there.
 
 ## Experiencing Performance Issues
 
