@@ -35,7 +35,7 @@ Please see [PerformanceIssues-Windows.md](PerformanceIssues-Windows.md).
 ## Security Concerns
 
 If you need to report a bug that an attacker could take advantage of, please instead email
-security@elastic.co so we can responsibly address the issue. Further reading [here](https://www.elastic.co/community/security)
+security@elastic.co so we can responsibly address the issue. Further reading [here](https://github.com/elastic/.github/blob/main/SECURITY.md)
 
 ## Asking questions
 
